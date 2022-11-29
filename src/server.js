@@ -1,16 +1,19 @@
 import express from "express";
 import configViewEngine from "./configs/viewEngine";
-require('dotenv').config(); //dong nay de doc file dotenv -> chay file env chua PORT=8080
+import initWebRoute from "./route/web";
+// import connection from "./configs/connectDB";
 
-const app = express()
-const port = process.env.PORT || 8080; //nếu port undefiend thì có 8080 backup
+require("dotenv").config(); //dong nay de doc file dotenv -> chay file .env chua PORT=3000
 
+const app = express();
+const port = process.env.PORT || 3000; //nếu port undefiend thì có ||3000 backup
+
+//setup view engine
 configViewEngine(app);
 
-app.get('/', (req, res) => {
-  res.render('index.ejs')
-})
+//init web route
+initWebRoute(app);
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Example app listening on port ${port}`);
+});
