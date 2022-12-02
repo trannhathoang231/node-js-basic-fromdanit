@@ -9,7 +9,9 @@ const initWebRoute = (app) => {
     router.get('/about', (req, res)=> {
         res.send(`I'm Eric!`)
     })
-
+    router.post('/delete-user', homeController.deleteUser)
+    router.get('/getEditPage/:id', homeController.getEditPage)
+    router.post('/post-update-user', homeController.postUpdateUser)
     //only requests to `/` will be sent to our "router" 
     //-> để cho express hiểu được thì app.use -> ứng dụng website bắt đầu bằng /
     return app.use('/',router)
