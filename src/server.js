@@ -1,6 +1,7 @@
 import express from "express";
 import configViewEngine from "./configs/viewEngine";
 import initWebRoute from "./route/web";
+import initAPIRoute from './route/api';
 const bodyParser  = require('body-parser');
 // import connection from "./configs/connectDB";
 
@@ -18,6 +19,9 @@ configViewEngine(app);
 
 //init web route
 initWebRoute(app);
+
+// init api route
+initAPIRoute(app);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
