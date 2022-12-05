@@ -61,5 +61,3 @@ let deleteUser = async (req, res) => {
 module.exports = {
     getAllUsers, createNewUser, updateUser, deleteUser
 }
- 16  
-src/route/api.js
